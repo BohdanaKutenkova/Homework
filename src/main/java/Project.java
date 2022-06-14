@@ -43,6 +43,23 @@ public class Project {
     void someMethod2() {
         int[] intArr2 = {1, 24, 3, 2, 1, 7, 24, 15, 24, 1, 17, 15, 8, 3, 13};
         int intL = intArr2.length;
+        boolean isSorted = false;
+        int x;
+
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < intL - 1; i++) {
+                for (int j = i + 1; j < intL; j++) {
+                    if (intArr2[i] > intArr2[j]) {
+                        isSorted = false;
+                        x = intArr2[i];
+                        intArr2[i] = intArr2[j];
+                        intArr2[j] = x;
+                    }
+                }
+            }
+        }
+
         int min = intArr2[0];
         int max = intArr2[intL - 1];
         int quantityMin = 1;
